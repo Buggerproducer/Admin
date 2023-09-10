@@ -56,24 +56,52 @@ export const constantRoutes = [
   },
 
   {
-    path: '/example',
+    path: '/sys',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'el-icon-s-help' },
+    redirect: '/sys/user',
+    name: 'sysManage',
+    meta: { title: 'System Management', icon: 'sys' },
     children: [
       {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        path: 'user',
+        name: 'user',
+        component: () => import('@/views/sys/user'),
+        meta: { title: 'User Management', icon: 'userManager' }
       },
       {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
+        path: 'role',
+        name: 'role',
+        component: () => import('@/views/sys/role'),
+        meta: { title: 'Role Management', icon: 'roleManager' }
       }
+    ]
+  },
+  {
+    path: '/test',
+    component: Layout,
+    redirect: '/test/test1',
+    name: 'test',
+    meta: { title: 'Testing', icon: 'sys' },
+    children: [
+      {
+        path: 'test1',
+        name: 'test1',
+        component: () => import('@/views/test/test1'),
+        meta: { title: 'Test 1', icon: 'test' }
+      },
+      {
+        path: 'test2',
+        name: 'test2',
+        component: () => import('@/views/test/test2'),
+        meta: { title: 'Test 2', icon: 'test' }
+      },
+      {
+        path: 'test3',
+        name: 'test3',
+        component: () => import('@/views/test/test3'),
+        meta: { title: 'Test 3', icon: 'test' }
+      },
+
     ]
   },
 
